@@ -1,14 +1,16 @@
 # TODO: Implement a Makefilw
-CXX = g++
-CXXFLAGS = -std=c++23
-SRCS = main.cpp hello.cpp
-OBJS = $(SRCS:.cpp=.o)
-TARGET = hello
+CXX := g++
+CXXFLAGS := -std=c++23 -Wall -Wextra
+TARGET := main
+OBJS := main.o
 all: $(TARGET)
 $(TARGET): $(OBJS)
-  $(CXX) $(CXXFLAGS) $^ -o $@
+	$(CXX) $(CXXFLAGS) $^ -o $@
 %.o: %.cpp
-  $(CXX) $(CXXFLAGS) -c $< -o $@
+	$(CXX) $(CXXFLAGS) -c $<
+clean:
+	rm -f $(TARGET) $(OBJS)
+.PHONY: all clean
 
 
 # Requirements:

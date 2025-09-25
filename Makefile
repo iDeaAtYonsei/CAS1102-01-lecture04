@@ -13,10 +13,11 @@ CXXFLAGS = -std=c++23
 all: main
 
 main: main.o
-	$(CXX) $(CXXFLAGS) $^ hello.cpp -o $@
+	$(CXX) $(CXXFLAGS) main.o hello.o -o hello
+
 
 %.o: %.cpp
-	$(CXX) $(CXXFLAGS) -c $<
+	$(CXX) $(CXXFLAGS) -c main.cpp hello.cpp
 
 clean:
 	rm -f main main.o

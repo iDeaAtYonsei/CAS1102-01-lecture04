@@ -1,6 +1,4 @@
-#include <iostream>
 #include "main.h"
+#include <iostream>
 
-void sayHello(std::string name) {
-    std::cout << "Hello, "  << name << std::endl;
-}
+void sayHello(const std::string& name) {std::cout << "Hello, " << name << std::endl;}

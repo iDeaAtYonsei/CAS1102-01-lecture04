@@ -1,6 +1,6 @@
 #include <iostream>
-#include "main.h"
+#include "hello.h"
 
-void sayHello(std::string name) {
-    std::cout << "Hello, "  << name << std::endl;
+void printHello() {
+    std::cout << "Hello, CAS1102" << std::endl;
 }

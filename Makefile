@@ -7,16 +7,13 @@
 # Implement a 'clean' rule to remove build artifacts (e.g., .o and executable).
 CXX = g++
 CXXFLAGS = -std=c++23 -Wall -Wextra
-all: main
+all: hello
 
-main: main.o
-  $(CXX) $(CXXFLAGS) main.o -o main
-main.o: main.cpp
-  $(CXX) $(CXXFLAGS) -c main.cpp
-hello: hello.o
-  $(CXX) $(CXXFLAGS) hello.o -o hello
-hello.o: hello.cpp
-  $(CXX) $(CXXFLAGS) -c hello.cpp
+hello: main.o hello.o
+	 $(CXX) $(CXXFLAGS) $^ -o $@
+$.o: %.cpp
+	$(CXX) $(CXXFLAGS) -c $<
+
 clean:
-  rm -f main main.o
+	rm -f main main.o hello.o hello
 .phony: clean all

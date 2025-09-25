@@ -9,7 +9,8 @@ main: main.o
   g++ -std=c++23 -Wall -Wextra main.o -o main
 main.o: main.cpp
   g++ -std=c++23 -Wall -Wextra -c main.cpp
-main.cpp: 
+main.cpp: hello.cpp
+  g++ -std=c++23 -Wall -Wextra -c hello.cpp
 clean: 
   rm -f main main.o
 .phony: clean

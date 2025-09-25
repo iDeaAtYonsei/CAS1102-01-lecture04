@@ -6,9 +6,9 @@ OBJS = $(SRCS:.cpp=.o)
 TARGET = hello
 all: $(TARGET)
 $(TARGET): $(OBJS)
-$(CXX) $(CXXFLAGS) $^ -o $@
+  $(CXX) $(CXXFLAGS) $^ -o $@
 %.o: %.cpp
-$(CXX) $(CXXFLAGS) -c $< -o $@
+  $(CXX) $(CXXFLAGS) -c $< -o $@
 
 
 # Requirements:

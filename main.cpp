@@ -1,7 +1,6 @@
-#include "main.h"
 #include <iostream>
 
 int main() {
-    sayHello("CAS1102");
+    std::cout << "Hello, CAS1102" << std::endl;
     return 0;
 }

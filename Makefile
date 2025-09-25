@@ -5,3 +5,10 @@
 # Compilation should generate object files.
 # Link object files to create an executable program.
 # Implement a 'clean' rule to remove build artifacts (e.g., .o and executable).
+#include <iostream>
+using namespace std;
+
+int main() {
+    cout << "Hello, CAS1102" << endl;
+    return 0;
+}

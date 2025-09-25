@@ -1,4 +1,14 @@
 # TODO: Implement a Makefilw
+CXX = g++
+CXXFLAGS = -std=c++23 -Wall
+TARGET = hello
+OBJS = main.o hello.o
+$(TARGET): $(OBJS)
+	$(CXX) $(CXXFLAGS) -o $(TARGET) $(OBJS)
+
+%.o: %.cpp
+	$(CXX) $(CXXFLAGS) -c $<
+	rm -f $(OBJS) $(TARGET)
 
 # Requirements:
 # Use C++23 standard.

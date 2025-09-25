@@ -1,5 +1,4 @@
 #include "main.h"
-#include "hello.cpp"
 #include <iostream>
 
 int main() {

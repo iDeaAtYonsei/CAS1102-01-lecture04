@@ -8,12 +8,14 @@
 
 all: main
 
-main: main.o 
-	g++ -c -std=c++23 -Wall -Wextra hello.cpp -o hello.o
-	g++ -std=c++23 -Wall -Wextra main.o -o main
+main: main.o hello.o
+	g++ -std=c++23 -Wall -Wextra main.o hello.o -o main
 
 main.o: main.cpp 
 	g++ -std=c++23 -Wall -Wextra -c main.cpp
+
+hello.o: hello.cpp
+	g++ -std=c++23 -Wall -Wextra -c hello.cpp
 
 clean: 
 	del /f main.exe main.o hello.o

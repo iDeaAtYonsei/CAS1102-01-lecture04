@@ -1,4 +1,15 @@
 # TODO: Implement a Makefilw
+CXX = g++
+CXXFLAGS = -std=c++23
+SRCS = main.cpp hello.cpp
+OBJS = $(SRCS:.cpp=.o)
+TARGET = hello
+all: $(TARGET)
+$(TARGET): $(OBJS)
+$(CXX) $(CXXFLAGS) $^ -o $@
+%.o: %.cpp
+$(CXX) $(CXXFLAGS) -c $< -o $@
+
 
 # Requirements:
 # Use C++23 standard.

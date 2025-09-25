@@ -1,7 +1,7 @@
-#include "main.h"
 #include <iostream>
+#include "hello.h"
 
 int main() {
-    sayHello("CAS1102");
+    printHello();
     return 0;
 }

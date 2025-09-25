@@ -13,28 +13,21 @@ int main() {
     return 0;
 }
 
-# Compiler and flags
 CXX := g++
 CXXFLAGS := -std=c++23 -Wall -Wextra -O2
 
-# Target executable name
 TARGET := hello
 
-# Source files
 SRCS := main.cpp
 OBJS := $(SRCS:.cpp=.o)
 
-# Default rule
 all: $(TARGET)
 
-# Linking
 $(TARGET): $(OBJS)
 	$(CXX) $(CXXFLAGS) -o $@ $^
 
-# Compilation
 %.o: %.cpp
 	$(CXX) $(CXXFLAGS) -c $< -o $@
 
-# Clean rule
 clean:
 	rm -f $(OBJS) $(TARGET)

@@ -9,16 +9,16 @@ CXX = g++
 CXXFLAGS = -std=c++17 -Wall -Wextra
 
 
-main: main.o hello.o
-	$(CXX) $(CXXFLAGS) -o main main.o hello.o
+hello: main.o hello.o
+	$(CXX) $(CXXFLAGS) -o hello main.o hello.o
 
-main.o: main.cpp main.h
-	$(CXX) $(CXXFLAGS) -c main.cpp
+main.o: main.cpp
+	$(CXX) $(CXXFLAGS) -c main.cpp -o main.o
 
-hello.o: hello.cpp main.h
-	$(CXX) $(CXXFLAGS) -c hello.cpp
+hello.o: hello.cpp
+	$(CXX) $(CXXFLAGS) -c hello.cpp -o hello.o
 
-clean:
-	rm -f main main.o
+clean:	
+	rm -f main.o hello.o hello
 
 .phony: clean all

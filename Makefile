@@ -1,4 +1,18 @@
-# TODO: Implement a Makefilw
+# TODO: Implement a Makefile
+CXX = clang++
+CXXFLAGS = -std=c++20 -Wall -Wextra
+
+main: main.o
+	$(CXX) $(CXXFLAGS) main.o -o main
+
+main.o: main.cpp
+	$(CXX) $(CXXFLAGS) -c main.cpp
+
+clean:
+	rm -f main main.o
+
+.PHONY: clean
+
 
 # Requirements:
 # Use C++23 standard.

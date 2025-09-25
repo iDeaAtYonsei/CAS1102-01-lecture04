@@ -14,7 +14,7 @@
 # main: main.o hello.o
 # 	$(CXX) $(CXXFLAGS) main.o hello.o -o main
 #
-# %.o: %.cpp main.h
+# %.o: %.cpp
 # 	$(CXX) $(CXXFLAGS) -c $< -o $@
 #
 # clean:

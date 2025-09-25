@@ -1,3 +1,20 @@
+CXX := g++
+CXXFLAGS := -std=c++23 -Wall -Wextra
+TARGET := main
+OBJS := main.o
+
+all: $(TARGET)
+
+$(TARGET): $(OBJS)
+	$(CXX) $(CXXFLAGS) $^ -o $@
+
+%.o: %.cpp
+	$(CXX) $(CXXFLAGS) -c $<
+
+clean:
+	rm -f $(TARGET) $(OBJS)
+
+.PHONY: all clean
 # TODO: Implement a Makefilw
 
 # Requirements:

@@ -1,7 +1,21 @@
-# TODO: Implement a Makefilw
-
-# Requirements:
-# Use C++23 standard.
-# Compilation should generate object files.
-# Link object files to create an executable program.
-# Implement a 'clean' rule to remove build artifacts (e.g., .o and executable).
+CXX = g++
+CXXFLAGS = -std=c++23 -Wall -Wextra
+LDFLAGS = -std=c++23
+# Target executable name
+TARGET = hello
+# Source files
+SRCS = main.cpp hello.cpp
+# Object files
+OBJS = $(SRCS:.cpp=.o)
+# Default rule when 'make' is executed
+all: $(TARGET)
+# Create final executable
+$(TARGET): $(OBJS)
+	$(CXX) $(LDFLAGS) $^ -o $@
+# Compile each source file to object file
+%.o: %.cpp
+	$(CXX) $(CXXFLAGS) -c $< -o $@
+# Clean build artifacts
+clean:
+	rm -f $(TARGET) $(OBJS)
+.PHONY: all clean

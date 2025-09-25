@@ -2,5 +2,10 @@
 #include "main.h"
 
 void sayHello(std::string name) {
-    std::cout << "Hello, "  << name << std::endl;
+    std::cout << "Hello, " << name << std::endl;
+}
+
+int main() {
+    sayHello("CAS1102");
+    return 0;
 }

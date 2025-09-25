@@ -20,7 +20,10 @@ $(TARGET): $(OBJS)
 %.o: %.cpp
 	$(CXX) $(CXXFLAGS) -c $< -o $@
 
-.PHONY: clean
+main.o: main.h
+hello.o: hello.h
+
+.PHONY: all clean
 
 clean:
 	rm -f $(OBJS) $(TARGET)

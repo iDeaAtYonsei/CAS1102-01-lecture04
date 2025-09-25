@@ -23,3 +23,7 @@ Desktop.ini
 a.out
 
 .idea/
+
+/build/
+
+git rm --cached -r build

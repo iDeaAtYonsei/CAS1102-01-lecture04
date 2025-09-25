@@ -6,13 +6,6 @@
 # Link object files to create an executable program.
 # Implement a 'clean' rule to remove build artifacts (e.g., .o and executable).
 
-include <iostream>
-
-int main() {
-    std::cout << "Hello, CAS1102" << std::endl;
-    return 0;
-}
-
 CXX := g++
 CXXFLAGS := -std=c++23 -Wall -Wextra -O2
 

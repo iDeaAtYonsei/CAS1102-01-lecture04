@@ -1,5 +1,18 @@
 # TODO: Implement a Makefilw
 
+CXX = g++
+CXXFLAGS = -std=c++23 -Wall -Wextra
+all: hello
+hello: main.o hello.o
+	$(CXX) $(CXXFLAGS) main.o hello.o -o hello
+main.o: main.cpp
+	$(CXX) $(CXXFLAGS) -c main.cpp
+hello.o: hello.cpp
+	$(CXX) $(CXXFLAGS) -c hello.cpp
+clean:
+	rm -f hello main.o hello.o
+.PHONY: clean all
+
 # Requirements:
 # Use C++23 standard.
 # Compilation should generate object files.
